@@ -1,14 +1,15 @@
-package com.lambdaschool.crudyorders;
+package com.lambdaschool.com.orders;
 
+import com.github.javafaker.Address;
 import com.github.javafaker.Faker;
-import com.lambdaschool.crudyorders.models.Agent;
-import com.lambdaschool.crudyorders.models.Customer;
-import com.lambdaschool.crudyorders.models.Order;
-import com.lambdaschool.crudyorders.models.Payment;
-import com.lambdaschool.crudyorders.repositories.AgentsRepository;
-import com.lambdaschool.crudyorders.repositories.CustomersRepository;
-import com.lambdaschool.crudyorders.repositories.OrdersRepository;
-import com.lambdaschool.crudyorders.repositories.PaymentRepository;
+import com.lambdaschool.com.orders.models.Agent;
+import com.lambdaschool.com.orders.models.Customer;
+import com.lambdaschool.com.orders.models.Order;
+import com.lambdaschool.com.orders.models.Payment;
+import com.lambdaschool.com.orders.repositories.AgentsRepository;
+import com.lambdaschool.com.orders.repositories.CustomersRepository;
+import com.lambdaschool.com.orders.repositories.OrdersRepository;
+import com.lambdaschool.com.orders.repositories.PaymentsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -46,7 +47,7 @@ public class SeedData implements CommandLineRunner
      * Connects the payment table to this SeedData method
      */
     @Autowired
-    private PaymentRepository paymentrepos;
+    private PaymentsRepository paymentrepos;
 
     /**
      * Generates test, seed data for our application
@@ -407,6 +408,8 @@ public class SeedData implements CommandLineRunner
             11000.00,
             "PPHGRTS",
             a10);
+
+
 
         Order o01 = new Order(1000.00,
             600.00,
